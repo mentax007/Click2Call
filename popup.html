@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="css/jquery-ui.theme.css">
+		<link rel="stylesheet" href="css/popup.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="center logo">
+				<img src="img/logo.png" alt="Logo Comes Here">
+			</div>
+			<div class="form">
+				<label for="tsTogglePauseOnPage" class="tsTogglePauseOnPage">
+					<i class="fas fa-toggle-off"></i>
+					<span>Pause on this website</span>
+				</label>
+				<label for="tsToggleHighlight" class="tsToggleHighlight">
+					<i class="fas fa-toggle-off"></i>
+					<span>Highlight phone numbers</span>
+				</label>
+				<label for="tsToggleAutoDetectNumbers" class="tsToggleAutoDetectNumbers">
+					<i class="fas fa-toggle-off"></i>
+					<span>Auto-detect phone numbers</span>
+				</label>
+				<label for="tsToggle" class="tsToggle">
+					<i class="fas fa-toggle-off"></i>
+					<span>Don't use desktop application</span>
+					<span class="info" title="When not using a desktop application, the specified Hosted PBX and provided credentials will be used to ring your extension, and upon being answered call outbound.
+					When using a desktop application, the telephone links will be handled by your computer's default program, such as the DLS Click to Dial desktop application or softphone.
+					If unsure what to set this option to, leave it set to use a desktop application or contact your administrator." >i</span></span>
+				</label>
+				<!-- we keep the radio buttons (however hidden) since that information need to be passed on in Ajax. -->
+				<div class="hide">
+					<input type="radio" name="tsPauseOnPage" id="tsPauseOnPageOff" value="off" >
+					<input type="radio" name="tsPauseOnPage" id="tsPauseOnPageOn" value="on" >
+					<input type="radio" name="tsSetHighlight" id="tsHighlightOff" value="off" >
+					<input type="radio" name="tsSetHighlight" id="tsHighlightOn" value="on" >
+					<input type="radio" name="tsAutoDetectNumbers" id="tsAutoDetectNumbersOff" value="off" >
+					<input type="radio" name="tsAutoDetectNumbers" id="tsAutoDetectNumbersOn" value="on" >
+					<!-- <label for="tsDefault"> -->
+					<input type="radio" name="tsBehaviour" id="tsDefault" value="default" >
+					<!-- Use System App <span class="info" title="When selected, the telephone links would be handled by your system app like skype or whatever  blah blah blah.">i</span> -->
+					<!-- </label> -->
+					<!-- <label for="tsHosted"> -->
+					<input type="radio" name="tsBehaviour" value="hosted"  id="tsHosted" >
+					<!-- Hosted PBX <span class="info"   title="When selected, the telephone links would be handled by the specified Hosted PBX, using the provided credentials. Blah blah blah. " >i</span> -->
+					<!-- </label> -->
+				</div>
+				<div class="hostedSettings hide">
+					<label for="tsDomain">
+						<span class="left">PBX Domain: </span>
+						<input type="text" id="tsDomain" placeholder="myphonesystem.pbx.example.net" value="">
+					</label>
+					<label for="tsExtension">
+						<span class="left">Extension: </span>
+						<input type="text" id="tsExtension" placeholder="Ext@Tenant" value="">
+					</label>
+					<label for="tsPswd">
+						<span class="left">Password: </span>
+						<input type="password" id="tsPswd" placeholder="PBX Password" value="">
+					</label>
+					<button id="tsTest">Test</button>
+				</div>
+				<button id="tsSave">Save</button>
+			</div>
+		</div>
+		<div class="theScreen hide"></div>
+
+		<!--  modal -->
+		<div id="dialog" title="Title Here">
+			<p></p>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/tsPopup.js"></script>
+	</body>
+</html>
