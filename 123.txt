@@ -1,0 +1,31 @@
+{
+   "background": {
+      "page": "background.html",
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": "images/logo_offline_128x128.png",
+      "default_popup": "tabs.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "injected.css" ],
+      "js": [ "jquery.js", "contentscript.js", "jquery.kazoosdk.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_idle"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "icons": {
+      "128": "images/logo_128x128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3RruZSf8kA6+hLXvR6uegUTZVOl0m7hqkY2INXmpl8qzPE/CQiwULoN374+tKjVY8Z+S4odhu7bS9zZc3i70pEYtn5G+z9faolb7RvKDSQzWzF52XYcduuTATGp3XtNxUnabtycDITbywTQV8pMJtmMTe+EbBXQf6XTWqkR9bXqKUskKq6d9zE8b2fvr2saxRk99KaYVneoSvvNSxqd+OsyfcFTlfzwt/R65duCCaWFLafA8NJUlKgG56N8RGqDUAFwW/ov/Gl5h8TPg/uc24ei3Qe1QQlqX6/kPiRs5g2zOFZSqiY2pqkZT7025pGmnG6N8CMXHi3W0JO6aWTmB/wIDAQAC",
+   "manifest_version": 2,
+   "name": "__MSG_appName__",
+   "options_page": "options.html",
+   "permissions": [ "notifications", "downloads", "tabs", "http://*/*", "https://*/*", "tts", "identity", "contextMenus", "activeTab" ],
+   "short_name": "SipDialer",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0",
+   "web_accessible_resources": [ "images/click2dial.png", "injected.html", "injected.js", "audio1.mp3" ]
+}
